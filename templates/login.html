@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="main-box">
+        <h2>Sign In !</h2>
+        <form class="main-form" enctype="multipart/form-data" method="post" action="/login">
+            <a class="sm-width" href="#">
+                <img src="https://w7.pngwing.com/pngs/277/499/png-transparent-google-google-s-computer-icons-google-plus-text-rectangle-logo.png" alt="Logo-ggle">
+                <span>Google</span>
+            </a>
+            <input required type="email" name="email" placeholder="Email">
+            <input minlength="7" maxlength="20" required type="password" name="password" placeholder="Password">
+            <button class="sm-width" type="submit">Log In</button>
+        </form>
+        <span>Don't have Account ? <a href="/signup">Create Account</a></span>
+    </div>
+</body>
+
+
+</html>

@@ -1,0 +1,82 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(78, 89, 173);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 35%;
+    margin: auto;
+    margin-top: 10vh;
+    background-color: white;
+    padding: 20px 30px;
+}
+
+.main-box .main-form {
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-form a {
+    border: 1px solid rgb(220, 74, 56);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: baseline;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(220, 74, 56);
+    height: 30px;
+    flex: 1;
+}
+
+.main-form a span {
+    flex: 1;
+    text-align: center;
+}
+
+.main-form a img {
+    height: 30px;
+    width: 30px;
+}
+
+.main-form input,
+.main-form select {
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 20px;
+    padding: 5px;
+    border: 1px solid rgb(208, 215, 222);
+    width: 90%;
+    margin: 5px 0px;
+    color: rgb(98, 100, 102);
+    outline: none;
+}
+
+.main-form button {
+    cursor: pointer;
+    line-height: 30px;
+    border: none;
+    background-color: rgb(83, 197, 210);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.main-form button:hover {
+    background-color: rgb(70, 169, 181);
+}
+
+.main-form .sm-width {
+    width: 92%;
+}

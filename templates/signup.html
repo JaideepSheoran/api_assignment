@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="main-box">
+        <h2>Create An Account</h2>
+        <form class="main-form" enctype="multipart/form-data" method="post" action="/signup">
+            <a class="sm-width" href="#">
+                <img src="https://w7.pngwing.com/pngs/277/499/png-transparent-google-google-s-computer-icons-google-plus-text-rectangle-logo.png" alt="Logo-ggle">
+                <span>Google</span>
+            </a>
+            <input required type="email" name="email" placeholder="Email">
+            <input required type="text" name="fullname" placeholder="Full Name">
+            <input minlength="7" maxlength="20" required type="password" name="password" placeholder="Password">
+            <select required class="sm-width" name="education" id="education">
+                <option value="">---- Highest Education Level ----</option>
+                <option value="sixth_ninth">6th - 9th Class</option>
+                <option value="10_th">10th Class</option>
+                <option value="11_th">11th Class</option>
+                <option value="12_th">12th Class</option>
+                <option value="Grad">Graduate Degree / Diploma</option>
+            </select>
+
+
+            <select required class="sm-width" name="city" id="city">
+                <option value="">---- Select Your City ----</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Chandigadh">Chandigadh</option>
+                <option value="Ajmer">Ajmer</option>
+                <option value="Kota">Kota</option>
+                <option value="Mumbai">Mumbai</option>
+            </select>
+
+            <input minlength="10" maxlength="10" required type="phone" name="phone" id="phone" placeholder="Phone">
+
+            <button class="sm-width" type="submit">Create New Account</button>
+        </form>
+        <span>Already Registered ? <a href="/login">Log In</a></span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+
+<h1>Opening Time</h1>
+<ul>
+    {% for snap in opening_time %}
+    <li>{{snap.day}}, {{snap.start_time_local}}, {{snap.end_time_local}}</li>
+    {% endfor %}
+</ul>
+
+<h1>Polling Status</h1>
+
+<ul>
+    {% for snap in store_status %}
+    <li>{{snap.status}}, {{snap.timestamp_utc}}</li>
+    {% endfor %}
+</ul>
+
+<h1>Uptime, Downtime</h1>
+
+<ul>
+    {% for item in week_dict %}
+    <li>{{ item[0] }}, {{ item[1] }}</li>
+    {% endfor %}
+</ul>
+
+<!-- <h1>Week Dictionary</h1>
+
+<ul>
+    <li> Monday :
+        <ul>
+            {% for item in week_dict[0] %}
+            <li>{{ item['poll_time'] }}, {{ item['status'] }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li> Tuesday :
+        <ul>
+            {% for item in week_dict[1] %}
+            <li>{{ item['poll_time'] }}, {{ item['status'] }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li> Wednesday :
+        <ul>
+            {% for item in week_dict[2] %}
+            <li>{{ item['poll_time'] }}, {{ item['status'] }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li> Thrusday :
+        <ul>
+            {% for item in week_dict[3] %}
+            <li>{{ item['poll_time'] }}, {{ item['status'] }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li> Friday :
+        <ul>
+            {% for item in week_dict[4] %}
+            <li>{{ item['poll_time'] }}, {{ item['status'] }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li> Saturday :
+        <ul>
+            {% for item in week_dict[5] %}
+            <li>{{ item['poll_time'] }}, {{ item['status'] }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li> Sunday :
+        <ul>
+            {% for item in week_dict[6] %}
+            <li>{{ item['poll_time'] }}, {{ item['status'] }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul> -->

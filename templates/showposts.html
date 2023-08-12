@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<h1>Posts by
+    <span> 
+        <div class="propic_">
+            <img class="propic" src="{{user.pic}}" alt="Profile" />
+        </div>
+        {{user.name}} <br>
+        {{user.roll_no}} <br> {{user.email}}
+    </span>
+</h1>
+<a href="/user/{{uid}}/posts/addpost">Add Post</a>
+<a href="/">Show Users</a>
+
+<div class="posts-container">
+    {% for post in posts %}
+    <div class="post-container">
+        <h2>{{post.title}}</h2>
+        <p>{{post.desc}}</p>
+        <p>{{post.date}}</p>
+        <a href="/user/{{uid}}/posts/delete/{{post._id}}">Delete</a>
+    </div>
+    {% endfor %}
+</div>

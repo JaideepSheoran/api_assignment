@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> {% if user_list %}
+<table>
+    {% for user in user_list: %}
+    <tr>
+        <td>
+            <div class="propic_">
+                <img class="propic" src="{{user.pic}}" alt="Profile" />
+            </div>
+        </td>
+        <td>
+            <a href="/user/{{user._id}}/posts">{{user.username}}</a>
+        </td>
+        <td>
+            {{user.password}}
+        </td>
+        <td class="email-text">
+            {{user.email}}
+        </td>
+        <td>
+            {{user.branch}}
+        </td>
+        <td>
+            <a href="delete/{{user._id}}">
+                <img src="https://icons.veryicon.com/png/o/commerce-shopping/read/delete-181.png" alt="Delete" srcset="">
+            </a>
+        </td>
+        <td>
+            <a href="verify/{{user._id}}">
+                <img class="{% if user.verified == True %} verified {% else %} not_verified {% endif %}" src="https://w7.pngwing.com/pngs/711/419/png-transparent-computer-icons-check-mark-symbol-flea-miscellaneous-angle-photography-thumbnail.png" alt="Verify" srcset="">
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td>
+            <a href="/adduser"><button type="submit">+ New User</button></a>
+        </td>
+    </tr>
+</table>
+{% endif %}
