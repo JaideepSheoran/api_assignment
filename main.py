@@ -1,4 +1,5 @@
 import copy
+from os import error
 from unittest import result
 from flask import Flask, jsonify, make_response, render_template, redirect, request, Blueprint, session
 from functools import cmp_to_key, wraps
@@ -171,7 +172,13 @@ def generate_report(store_id):
     # store polling data
     store_status = mongo_db.store_status.find({'store_id' : store_id}).sort("timestamp_utc")
 
-    if store_status is None:
+    len = 0
+    for item in store_status:
+        len += 1
+        if len != 0:
+            break
+
+    if len == 0:
         return make_response({'message' : 'Not found store_id'}, 404)
 
     # store opening status
